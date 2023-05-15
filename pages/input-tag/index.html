@@ -20,7 +20,7 @@
       }
 
       input::placeholder {
-        color: #5f5f5f;
+        color: grey;
       }
 
       .example-form {
@@ -86,9 +86,8 @@
               id="name"
               name="name"
               autocomplete="off"
-              required
               autofocus
-              placeholder="Nume"
+              placeholder="Numele tau"
             />
           </div>
           <div role="group" class="form-group">
@@ -99,6 +98,8 @@
             <label for="phone">Telefon</label>
             <input autocomplete="tel" type="tel" id="phone" name="phone" />
           </div>
+
+          <div role="group" class="form-group"></div>
           <div role="group" class="form-group">
             <label for="date">Data</label>
             <input type="date" id="date" name="date" />
@@ -110,7 +111,8 @@
               name="mesage"
               rows="5"
               placeholder="Mesajul aici"
-            ></textarea>
+            >
+            </textarea>
           </div>
           <div role="group" class="form-group">
             <button class="btn-submit" type="submit">Submit</button>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="node_modules/modern-normalize/modern-normalize.css"
+    />
+    <style>
+      .modal {
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.2);
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        visibility: hidden;
+        transform: scale(0.8);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+
+      .modal-content {
+        padding: 40px;
+        background: #fff;
+        width: 528px;
+        height: 581px;
+        margin: 0 auto;
+        position: relative;
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
+          0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+      }
+
+      .is-hidden {
+        visibility: visible;
+        opacity: 1;
+        transform: scale(1);
+      }
+    </style>
+  </head>
+  <body>
+    <div data-modal class="modal is-hidden">
+      <div class="modal-content">
+        <button class="close-btn" data-modal-close>Close</button>
+        <form class="form">
+          <div role="group" class="form-group">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" />
+          </div>
+
+          <label class="form-group">
+            <span>Phone</span>
+            <input id="phone" type="tel" />
+            <svg
+              class="input-icon"
+              width="18"
+              height="18"
+              viewBox="0 0 18 18"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g clip-path="url(#clip0_1_2673)">
+                <path
+                  d="M13.996 11.1226L12.1579 10.9127C11.7164 10.862 11.2822 11.014 10.971 11.3252L9.63945 12.6568C7.59144 11.6147 5.91251 9.94296 4.87041 7.8877L6.20922 6.54888C6.5204 6.2377 6.67237 5.80349 6.62171 5.36205L6.41185 3.53836C6.325 2.80745 5.70988 2.25745 4.97173 2.25745H3.71976C2.902 2.25745 2.22175 2.93771 2.2724 3.75547C2.65595 9.93572 7.59868 14.8712 13.7717 15.2548C14.5894 15.3054 15.2697 14.6252 15.2697 13.8074V12.5555C15.2769 11.8245 14.7269 11.2094 13.996 11.1226V11.1226Z"
+                  fill="#212121"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_1_2673">
+                  <rect width="18" height="18" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+          </label>
+
+          <label class="form-group">
+            <span>Comments</span>
+            <textarea
+              name="comments"
+              class="textarea"
+              rows="5"
+              placeholder="Introdu mesajul tau..."
+            ></textarea>
+          </label>
+
+          <label class="form-group form-checkbox">
+            <input type="checkbox" name="acceptTerms" />
+            <span>
+              I agree with the letter and accept the Terms and Conditions
+            </span>
+          </label>
+
+          <div class="form-controls">
+            <button type="submit" class="btn-submit">Send</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div>
+      <button data-modal-open>Open</button>
+    </div>
+    <script src="./modal.js"></script>
+  </body>
+</html>

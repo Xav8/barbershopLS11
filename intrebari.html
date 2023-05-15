@@ -13,10 +13,50 @@
   </head>
   <body>
     <main class="container example-page">
-      <form>
-        <label>Date</label>
-        <input type="date" name="data" />
-      </form>
+      <section class="lesson-example">
+        <form>
+          <h2>Input type date</h2>
+          <label>Date</label>
+          <input type="date" name="data" />
+        </form>
+      </section>
+
+      <section class="lesson-example mt-lg">
+        <h2>Nested label</h2>
+        <div class="mt-md">
+          <!-- Don't do this -->
+          <label>
+            <input type="checkbox" name="name" />
+            I accept the terms and conditions.
+            <a href="https://goit.global/ro/">See terms and conditions</a>
+          </label>
+        </div>
+
+        <div class="mt-xs">
+          <!-- Try this -->
+          <label>
+            <input type="checkbox" name="name" />
+            I accept the terms and conditions.
+          </label>
+          <a href="https://goit.global/ro/">See terms and conditions</a>
+        </div>
+
+        <div class="mt-xs">
+          <!-- Or this -->
+          <input type="checkbox" id="t-and-c3" name="name" />
+          <label for="t-and-c3"> I accept the terms and conditions. </label>
+          <a href="https://goit.global/ro/">See terms and conditions</a>
+        </div>
+
+        <form name="myForm" action="">
+          <label>
+            <span>Varsta</span>
+            <input type="number" name="age" min="10" />
+          </label>
+          <button type="submit">Submit</button>
+        </form>
+        <textarea rows="4" name="textarea" cols="5"></textarea>
+      </section>
     </main>
   </body>
 </html>
